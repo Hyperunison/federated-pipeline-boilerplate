@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://raw.githubusercontent.com/nf-gwas/master/nextflow_schema.json",
+  "title": "nf-gwas pipeline parameters",
+  "description": "A Nextflow GWAS pipeline.",
+  "type": "object",
+  "definitions": {
+    "required_input_output_options": {
+      "title": "Basic configuration",
+      "type": "object",
+      "fa_icon": "fas fa-terminal",
+      "description": "Basic configuration of GWAS pipeline",
+      "properties": {
+        "string_param": {
+          "type": "string",
+          "description": "This is string variable with regex validation",
+          "pattern": "^([\\w-]+)(,([\\w-]+)+)*$",
+          "fa_icon": "fas fa-folder-open"
+        },
+        "bool_param": {
+          "type": "boolean",
+          "description": "This is boolean variable. It will be rendered as a checkbox",
+          "fa_icon": "fas fa-folder-open"
+        }
+      },
+      "required": ["outdir"]
+    }
+  },
+  "allOf": [{"$ref": "#/definitions/required_input_output_options"}]
+}
