@@ -1,5 +1,4 @@
 from typing import List, Dict
-from src.Service.UCDMResolver import UCDMConvertedField
 
 
 def get_input_files(ucdm: List[Dict[str, str]], parameters: Dict[str, str]) -> Dict[str, str]:
